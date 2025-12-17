@@ -36,13 +36,13 @@ jobs:
           echo "== Unzip =="
           rm -rf xygeni-scanner
           unzip -q xygeni-release.zip
-          ls xygeni-scanner/
+          ls ./xygeni-scanner/
 
           echo "== Locate xygeni binary and run =="
           # Ajusta esta ruta si tu zip trae otro nombre exacto de carpeta
-          chmod +x xygeni-scanner/xygeni
+          chmod +x ./xygeni-scanner/xygeni
 
-          xygeni-scanner/xygeni \
+          ./xygeni-scanner/xygeni \
             --url "${XYGENI_URL}" \
             --token "${XYGENI_TOKEN}" \
             scan --never-fail -n "${CLOUDBEES_REPO:-repo}" -d .
