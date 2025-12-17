@@ -35,8 +35,7 @@ jobs:
 
           echo "== Unzip =="
           rm -rf xygeni-scanner
-          mkdir -p xygeni-scanner
-          unzip -q xygeni-release.zip -d xygeni-scanner
+          unzip -q xygeni-release.zip
 
           echo "== Locate xygeni binary and run =="
           # Ajusta esta ruta si tu zip trae otro nombre exacto de carpeta
