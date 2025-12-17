@@ -18,7 +18,6 @@ jobs:
         env:
           XYGENI_URL: "https://api.xygeni.io"
           XYGENI_TOKEN: ${{ secrets.XYGENI_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.PAT_FOR_XYGENI_SCAN }}
         run: |
           set -euo pipefail
 
