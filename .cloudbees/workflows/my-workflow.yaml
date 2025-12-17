@@ -34,14 +34,14 @@ jobs:
           curl -sSL -o xygeni-release.zip https://get.xygeni.io/latest/scanner/xygeni-release.zip
 
           echo "== Unzip =="
-          rm -rf xygeni-scanner
+          rm -rf xygeni_scanner
           unzip -q xygeni-release.zip
           ls
-          ls ./xygeni-scanner
+          ls ./xygeni_scanner
 
           echo "== Locate xygeni binary and run =="
           # Ajusta esta ruta si tu zip trae otro nombre exacto de carpeta
-          chmod +x ./xygeni-scanner/xygeni
+          chmod +x ./xygeni_scanner/xygeni
 
           ./xygeni-scanner/xygeni \
             --url "${XYGENI_URL}" \
