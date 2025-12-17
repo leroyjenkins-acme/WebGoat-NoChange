@@ -43,7 +43,7 @@ jobs:
           # Ajusta esta ruta si tu zip trae otro nombre exacto de carpeta
           chmod +x ./xygeni_scanner/xygeni
 
-          ./xygeni-scanner/xygeni \
+          ./xygeni_scanner/xygeni \
             --url "${XYGENI_URL}" \
             --token "${XYGENI_TOKEN}" \
             scan --never-fail -n "${CLOUDBEES_REPO:-repo}" -d .
