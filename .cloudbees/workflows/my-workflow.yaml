@@ -13,7 +13,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Download + unzip Xygeni Scanner + run scan (no docker scanner)
+      - name: Download + unzip Xygeni Scanner + Run
         uses: docker://maven:3.9.9-eclipse-temurin-17
         env:
           XYGENI_URL: "https://api.xygeni.io"
@@ -36,14 +36,10 @@ jobs:
           echo "== Unzip =="
           rm -rf xygeni_scanner
           unzip -q xygeni-release.zip
-          ls
-          ls ./xygeni_scanner
 
-          echo "== Locate xygeni binary and run =="
-          # Ajusta esta ruta si tu zip trae otro nombre exacto de carpeta
+
           chmod +x ./xygeni_scanner/xygeni
 
           ./xygeni_scanner/xygeni \
             --url "${XYGENI_URL}" \
-            --token "${XYGENI_TOKEN}" \
             scan --never-fail -n "${CLOUDBEES_REPO:-repo}" -d .
